@@ -219,11 +219,23 @@ def handle_message(event):
                        
             reply.append(TextSendMessage(text="答案錯誤"))
             img_link = CheckAns(player_A, [2]*5, client_img)
-            reply.append(ImageSendMessage(original_content_url=img_link, preview_image_url=img_link))
-            line_bot_api.reply_message(
-                event.reply_token,
-                reply
-            )
+            try:
+                reply.append(ImageSendMessage(original_content_url=img_link, preview_image_url=img_link))
+                line_bot_api.push_message(
+                    UserId,
+                    reply
+                )  
+            else:
+                line_bot_api.reply_message(
+                    event.reply_token,
+                    TextSendMessage(text="合成失敗") # 加上當前分數
+                )
+
+            # reply.append(ImageSendMessage(original_content_url=img_link, preview_image_url=img_link))
+            # line_bot_api.reply_message(
+            #     event.reply_token,
+            #     reply
+            # )
 
     # 回傳正確答案
     elif player_information["Ans_flag"]==2:

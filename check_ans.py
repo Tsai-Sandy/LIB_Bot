@@ -16,22 +16,22 @@ dic_ans_status = {
 }
 
 def CheckAns(guset, index, CLIENT_ID):
-    # mother_image = Image.open("./img/base.jpg")
+    mother_image = Image.open("./img/base.jpg")
 
-    # for i in range(len(index)):
-    #     img = Image.open("./img/" + dic_ans_status[index[i]] + ".jpg")
+    for i in range(len(index)):
+        img = Image.open("./img/" + dic_ans_status[index[i]] + ".jpg")
 
-    #     # ====== 在色塊上寫上文字 ====== #
-    #     Drawing = ImageDraw.Draw(img)
-    #     Myfont = ImageFont.truetype(r'./font/arial.ttf', size=300)
-    #     Drawing.text((140, 120), guset[i], fill='rgb(0,0,0)', font=Myfont)
+        # ====== 在色塊上寫上文字 ====== #
+        Drawing = ImageDraw.Draw(img)
+        Myfont = ImageFont.truetype(r'./font/arial.ttf', size=300)
+        Drawing.text((140, 120), guset[i], fill='rgb(0,0,0)', font=Myfont)
 
-    #     # ====== 在母圖上貼上對應小圖 ====== # 
-    #     mother_image.paste(img, (dic_x[i], 0))
-    # # 存檔
-    # mother_image.save("./img/test.jpg")
+        # ====== 在母圖上貼上對應小圖 ====== # 
+        mother_image.paste(img, (dic_x[i], 0))
+    # 存檔
+    mother_image.save("./img/ans.jpg")
 
     im = pyimgur.Imgur(CLIENT_ID)
-    uploaded_img = im.upload_image("./img/test.jpg", title="Uploaded with PyImgur")
+    uploaded_img = im.upload_image("./img/ans.jpg", title="Uploaded with PyImgur")
 
     return uploaded_img.link
