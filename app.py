@@ -41,7 +41,7 @@ def callback():
     app.logger.info("Request body: " + body)
 
     print(body)
-    
+
     # handle webhook body
     try:
         handler.handle(body, signature)
@@ -174,7 +174,7 @@ def handle_message(event):
                 TextSendMessage(text=f"您的積分：{player_information['score']}\n\n排行榜:\n{text}")
             )
 
-    # 猜數字
+    # 猜數字、要加判斷答案格式、位置正確錯誤的
     elif player_information["Ans_flag"]==1:
         player_A = event.message.text
         player_Q = anscol.find_one({"Q_id": player_information["Question"][-1]})
@@ -195,6 +195,7 @@ def handle_message(event):
             line_bot_api.reply_message(
                 event.reply_token,
                 reply
+                # TextSendMessage(text=f"答案正確！\n{img_link}")
             )
         else:
             correct = []
@@ -218,7 +219,7 @@ def handle_message(event):
                             correct_count[player_A[i]] -= 1
                        
             reply.append(TextSendMessage(text="答案錯誤"))
-            img_link = CheckAns(player_A, [2]*5, client_img)
+            img_link = CheckAns(player_A, compare_ans, client_img)
             reply.append(TextSendMessage(text=img_link))
             #reply.append(ImageSendMessage(original_content_url=img_link, preview_image_url=img_link))
             line_bot_api.reply_message(
