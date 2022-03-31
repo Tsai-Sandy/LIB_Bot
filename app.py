@@ -225,7 +225,7 @@ def handle_message(event):
                     UserId,
                     reply
                 )  
-            else:
+            except:
                 line_bot_api.reply_message(
                     event.reply_token,
                     TextSendMessage(text="合成失敗") # 加上當前分數
