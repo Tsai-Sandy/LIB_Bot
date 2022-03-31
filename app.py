@@ -189,7 +189,7 @@ def handle_message(event):
         if player_A == Q_isbn: # 答案正確
             newValue = {"$set": {"Ans_flag": 2}}
             mycol.update_one({"PlayerId": UserId}, newValue)
-            img_link = CheckAns(player_A, [2]*5, client_img)
+            img_link = CheckAns(player_information["PlayerId"], player_A, [2]*5, client_img)
             reply.append(ImageSendMessage(original_content_url=img_link, preview_image_url=img_link))
             reply.append(TextSendMessage(text=f"答案正確！\n{player_Q['hint']}"))
             line_bot_api.reply_message(
@@ -219,7 +219,7 @@ def handle_message(event):
                             correct_count[player_A[i]] -= 1
                        
             reply.append(TextSendMessage(text="答案錯誤"))
-            img_link = CheckAns(player_A, compare_ans, client_img)
+            img_link = CheckAns(player_information["PlayerId"], player_A, compare_ans, client_img)
             #reply.append(TextSendMessage(text=img_link))
             
             reply.append(ImageSendMessage(original_content_url=img_link, preview_image_url=img_link))

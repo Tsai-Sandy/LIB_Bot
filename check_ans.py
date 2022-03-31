@@ -15,7 +15,7 @@ dic_ans_status = {
 	2: "green"
 }
 
-def CheckAns(guset, index, CLIENT_ID):
+def CheckAns(user, guset, index, CLIENT_ID):
     mother_image = Image.open("./img/base.jpg")
 
     for i in range(len(index)):
@@ -39,12 +39,12 @@ def CheckAns(guset, index, CLIENT_ID):
 
     try:
         # 存檔
-        mother_image.save("./img/ans.jpg")
+        mother_image.save("./img/" + user + ".jpg")
     except:
         print("存檔失敗")
         return "存檔失敗"
 
     im = pyimgur.Imgur(CLIENT_ID)
-    uploaded_img = im.upload_image("./img/ans.jpg", title="Uploaded with PyImgur")
+    uploaded_img = im.upload_image("./img/" + user + ".jpg", title="Uploaded with PyImgur")
 
     return uploaded_img.link
