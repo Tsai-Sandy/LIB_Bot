@@ -221,14 +221,19 @@ def handle_message(event):
             reply.append(TextSendMessage(text="答案錯誤"))
             img_link = CheckAns(player_A, compare_ans, client_img)
             #reply.append(TextSendMessage(text=img_link))
+            
+            reply.append(ImageSendMessage(original_content_url=img_link, preview_image_url=img_link))
+            
             try:
-                reply.append(ImageSendMessage(original_content_url=img_link, preview_image_url=img_link))
+                line_bot_api.reply_message(
+                    event.reply_token,
+                    reply
+                )
             except:
-                reply.append(TextSendMessage(text="圖片訊息回傳失敗"))
-            line_bot_api.reply_message(
-                event.reply_token,
-                reply
-            )
+                line_bot_api.reply_message(
+                    event.reply_token,
+                    TextSendMessage(text="圖片回傳失敗")
+                )  
 
     # 回傳正確答案
     elif player_information["Ans_flag"]==2:
