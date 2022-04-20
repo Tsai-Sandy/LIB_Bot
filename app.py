@@ -195,7 +195,6 @@ def handle_message(event):
             line_bot_api.reply_message(
                 event.reply_token,
                 reply
-                # TextSendMessage(text=f"答案正確！\n{img_link}")
             )
         else:
             correct = []
