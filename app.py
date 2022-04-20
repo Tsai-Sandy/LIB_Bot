@@ -218,7 +218,7 @@ def handle_message(event):
                             compare_ans[i] = 1
                             correct_count[player_A[i]] -= 1
                        
-            reply.append(TextSendMessage(text="答案錯誤"))
+            reply.append(TextSendMessage(text="答案錯誤（綠：完全正確、黃：位置錯誤、灰：為在答案中）"))
             img_link = CheckAns(player_information["PlayerId"], player_A, compare_ans, client_img)
             #reply.append(TextSendMessage(text=img_link))
             
