@@ -1,7 +1,3 @@
----
-title: 2022 讀者服務期中報告 —— 謎圖 ——
----
-
 # 2022 讀者服務期中報告 —— 謎圖 ——
 
 :::info
@@ -29,12 +25,12 @@ title: 2022 讀者服務期中報告 —— 謎圖 ——
 :::info
 流程圖綠色部分為讀者操作部分
 :::
-![image](https://hackmd.io/_uploads/BJDXtmb0kg.png)
+![image](https://github.com/user-attachments/assets/747f2857-962c-4e98-868b-de5e7a35197e)
+
 
 ## 系統截圖
-
-![image](https://hackmd.io/_uploads/SkCOF7bAke.png)
-![image](https://hackmd.io/_uploads/SJucKXZCJg.png)
-![image](https://hackmd.io/_uploads/SyPZqQ-R1e.png)
-![image](https://hackmd.io/_uploads/ryCZqm-0kg.png)
-![image](https://hackmd.io/_uploads/HkPxcXZC1e.png)
+![image](https://github.com/user-attachments/assets/79841db6-c4b6-48c0-a40a-19507e36f1f8)
+![image](https://github.com/user-attachments/assets/e94b2612-e2d9-4114-a901-0e4ad1714949)
+![image](https://github.com/user-attachments/assets/18f6dc07-c420-4537-8bf7-bcf3f83bfbb8)
+![image](https://github.com/user-attachments/assets/14ba88a8-6141-408c-8a66-6cf08b64918a)
+![image](https://github.com/user-attachments/assets/14e76308-7032-4c97-a739-f48dfbd7209d)
