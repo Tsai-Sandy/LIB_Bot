@@ -21,10 +21,8 @@
 - 藉由遊戲讓玩家猜測 ISBN 或 ISSN 的後五碼，再透過館藏系統查詢對應的索書號，或從 HyRead ebook 等平台取得資訊（如：網址 id），並回傳，最後以回答正確的速度來進行排名積分賽。
 
 ## 操作流程
+* 流程圖綠色部分為讀者操作部分
 
-:::info
-流程圖綠色部分為讀者操作部分
-:::
 ![image](https://github.com/user-attachments/assets/747f2857-962c-4e98-868b-de5e7a35197e)
 
 
