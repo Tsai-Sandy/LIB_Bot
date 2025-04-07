@@ -1,4 +1,3 @@
-from http import client
 import os
 from dotenv import load_dotenv
 from flask import Flask, request, abort
@@ -7,8 +6,6 @@ import random
 import time
 from collections import Counter
 from check_ans import CheckAns
-# from PIL import Image, ImageDraw, ImageFont
-# import pyimgur
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -23,9 +20,9 @@ app = Flask(__name__)
 load_dotenv(encoding="utf-8")
 line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
 handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
-client_img = os.environ.get('CLIENT_ID')
+client_img = os.getenv('CLIENT_ID')
 
-myclient = pymongo.MongoClient("mongodb+srv://user_try:library@cluster0.4ejzf.gcp.mongodb.net/test")
+myclient = pymongo.MongoClient(os.getenv('MONGO_CLIENT_URI'))
 mydb = myclient["LIB"]
 mycol = mydb["player"]
 anscol = mydb["Question"]

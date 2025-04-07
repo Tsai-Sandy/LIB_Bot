@@ -1,8 +1,12 @@
+import os
+from dotenv import load_dotenv
 import pymongo
 import pandas
 import datetime
 
-myclient = pymongo.MongoClient("mongodb+srv://user_try:library@cluster0.4ejzf.gcp.mongodb.net/test")
+load_dotenv(encoding="utf-8")
+
+myclient = pymongo.MongoClient(os.getenv('MONGO_CLIENT_URI'))
 mydb = myclient["LIB"]
 mycol = mydb["player"]
 rank = mydb["rank"]
